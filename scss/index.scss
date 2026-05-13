@@ -1,0 +1,162 @@
+.background-image-group {
+    h1 {
+        font-family: Georgia, 'Times New Roman', Times, serif;
+        color: white;
+        font-style: italic;
+        font-size: 90px;
+        text-align: center;
+        span {
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            font-style: italic;
+            color: #EAD5B5;
+        }
+    }
+    p {
+        position: absolute;
+        left: 50%;
+        top: 90%;
+        transform: translate(-50%, -50%);
+        font-family: Georgia, 'Times New Roman', Times, serif;
+        color: #EAD5B5;
+        font-size: 30px;
+        font-style: italic;
+    }
+}
+
+.railway-lines {
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 40px;
+    h2 {
+        font-family: Georgia, 'Times New Roman', Times, serif;
+        color: white;
+        font-size: 50px;
+        text-align: center;
+    }
+    .railway-lines-info-boxes {
+        width: 90vw;
+        display: flex;
+        justify-content: space-between;
+        .railway-lines-info-box {
+            width: 20vw;
+            background-color: white;
+            .rail-name {
+                text-align: center;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                min-height: 100px;
+                color: white;
+                font-family: sans-serif;
+                font-size: 28px;
+                background-color: #0051BB;
+                border: 5px dashed white;
+            }
+            .rail-description-image {
+                display: flex;
+                align-items: center;
+                width: 100%;
+                min-height: 160px;
+            }
+            img {
+                width: 100%;
+            }
+            .rail-description-div {
+                display: flex;
+                align-items: center;
+                min-height: 190px;
+                p {
+                    margin: 10px;
+                }
+            }
+        }
+    }
+}
+
+.image-galery {
+    width: 90%;
+    margin: 20px 0 20px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    .image-galery-grid {
+        width: 80%;
+        padding-top: 30px;
+        padding-bottom: 30px;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr;
+        grid-column-gap: 1em;
+        grid-row-gap: 1em;
+        img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            display: block;
+        }
+    }
+}
+
+@media (max-width: 1300px) {
+    .railway-lines .railway-lines-info-boxes {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 25px;
+        .railway-lines-info-box {
+            width: 45%;
+        }
+    }
+    .image-galery .image-galery-grid {
+        grid-template-columns: repeat(3, 1fr);
+        width: 95%;
+    }
+}
+
+@media (max-width: 800px) {
+    .railway-lines {
+        h2 {
+            font-size: 40px;
+        }
+        .railway-lines-info-boxes .railway-lines-info-box {
+            width: 90%;
+            .rail-name {
+                font-size: 24px;
+                min-height: 70px;
+            }
+        }
+    }
+    .image-galery .image-galery-grid {
+        grid-template-columns: repeat(2, 1fr);
+        img {
+            height: 160px;
+        }
+    }
+}
+
+@media (max-width: 600px) {
+    .background-image-group {
+        h1 {
+            font-size: 12vw;
+            top: 30%;
+        }
+        p {
+            font-size: 5vw;
+            top: 82%;
+        }
+    }
+    .railway-lines h2 {
+        font-size: 32px;
+    }
+    .image-galery .image-galery-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        img {
+            height: auto;
+            max-height: 250px;
+        }
+    }
+}

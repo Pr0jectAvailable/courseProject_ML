@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>ЖД билеты Минск-Пассажирский</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/tickets.css">
+    <link rel="icon" href="../images/Icons/logo.png" type="image/png">
+</head>
+<body>
+
+<header>
+    <a href="./index.html">
+        <div class="logo-placeholder">ЛОГОТИП</div>
+    </a>
+    <div class="head--buttons">
+        <a class="head--button" href="./tickets.html">Билеты</a>
+        <a class="head--button" href="./reference_section.html">Всё для пассажиров</a>
+        <a class="head--button" href="./other_services.html">Другие услуги</a>
+        <a class="head--button" href="./contacts.html">Контакты</a>
+    </div>
+</header>
+
+<div class="mobile-header">
+    <button class="burger-menu" aria-label="Меню">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+</div>
+
+<div class="mobile-nav">
+    <a class="mobile-nav-link" href="./tickets.html">Билеты</a>
+    <a class="mobile-nav-link" href="./reference_section.html">Всё для пассажиров</a>
+    <a class="mobile-nav-link" href="./other_services.html">Другие услуги</a>
+    <a class="mobile-nav-link" href="./contacts.html">Контакты</a>
+</div>
+
+<div class="background-image-group">
+    <img class="background-image" src="../images/background/second.jpg" alt="background_image">
+    <div class="tickets-filter">
+        <h2>Фильтр билетов</h2>
+        <div class="filter-div">
+            <div class="filter-group">
+                <label>Откуда:</label>
+                <select id="filterFrom">
+                    <option value="">Любой</option>
+                    <option value="Минск">Минск</option>
+                    <option value="Гомель">Гомель</option>
+                    <option value="Могилёв">Могилёв</option>
+                    <option value="Витебск">Витебск</option>
+                    <option value="Гродно">Гродно</option>
+                    <option value="Брест">Брест</option>
+                    <option value="Бобруйск">Бобруйск</option>
+                    <option value="Жлобин">Жлобин</option>
+                    <option value="Пинск">Пинск</option>
+                    <option value="Орша">Орша</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <label>Куда:</label>
+                <select id="filterTo">
+                    <option value="">Любой</option>
+                    <option value="Минск">Минск</option>
+                    <option value="Гомель">Гомель</option>
+                    <option value="Могилёв">Могилёв</option>
+                    <option value="Витебск">Витебск</option>
+                    <option value="Гродно">Гродно</option>
+                    <option value="Брест">Брест</option>
+                    <option value="Бобруйск">Бобруйск</option>
+                    <option value="Жлобин">Жлобин</option>
+                    <option value="Пинск">Пинск</option>
+                    <option value="Орша">Орша</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <label>Дата поездки:</label>
+                <input type="date" id="filterDate" value="">
+            </div>
+            <div class="filter-group">
+                <label>Рейтинг (от):</label>
+                <select id="filterRating">
+                    <option value="">Любой</option>
+                    <option value="3">⭐ 3 и выше</option>
+                    <option value="3.5">⭐ 3.5+</option>
+                    <option value="4">⭐ 4+</option>
+                    <option value="4.5">⭐ 4.5+</option>
+                    <option value="4.8">⭐ 4.8+</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <button id="applyFilter">Показать</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="tickets-catalog">
+    <div class="tickets-catalog-div"></div>
+    <div class="pages"></div>
+</div>
+
+<footer>
+    <div class="footer-div">
+        <div class="info1"><a href="tel:105">105 Контакт-центр</a><br>
+            <a href="tel:151">151 Служба поддержки пассажиров</a>
+        </div>
+        <div class="info2">
+            Адрес: 220030, Минск, Привокзальная площадь, 5
+        </div>
+    </div>
+    <div class="footer-div">
+        <a href="./tickets.html"><h2>Билеты</h2></a>
+    </div>
+    <div class="footer-div">
+        <a href="./reference_section.html"><h2>Всё для пассажиров</h2></a>
+        <a href="./reference_section.html#documents"><h3>Проездные документы (билеты)</h3></a>
+        <a href="./reference_section.html#items"><h3>Найденные Вещи</h3></a>
+        <a href="./reference_section.html#services"><h3>Услуги в поездах</h3></a>
+    </div>
+    <div class="footer-div">
+        <a href="./other_services.html"><h2>Другие услуги</h2></a>
+        <a href="./other_services.html#information"><h3>Информация</h3></a>
+        <a href="./other_services.html#news"><h3>Новости</h3></a>
+    </div>
+</footer>
+
+<script src="../js/burger.js"></script>
+<script src="../xml/tickets_data.js"></script>
+<script src="../js/js.js"></script>
+</body>
+</html>

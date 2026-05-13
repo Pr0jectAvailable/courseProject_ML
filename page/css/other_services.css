@@ -1,0 +1,199 @@
+.head--buttons .head--button:nth-child(3) {
+  background-color: #007ABB;
+  color: white;
+}
+
+.background-image-group h1 {
+  font-size: 60px;
+  text-shadow: white 0px 0px 10px;
+  margin-top: 60px;
+}
+
+.info-group {
+  width: 80%;
+  margin-top: 40px;
+}
+
+.info-group h2 {
+  width: 100%;
+  color: white;
+  font-size: 50px;
+  text-align: center;
+}
+
+.info-group .info-group-collection {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.info-group .info-group-collection div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 44%;
+  height: 160px;
+  margin-top: 20px;
+  background-color: white;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column wrap;
+          flex-flow: column wrap;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.info-group .info-group-collection div p {
+  text-align: center;
+  margin-top: 25px;
+}
+
+.info-group .info-group-collection div a {
+  margin-bottom: 25px;
+  -webkit-text-decoration: dashed;
+          text-decoration: dashed;
+}
+
+.news-group {
+  width: 80%;
+  margin-top: 60px;
+  background-color: white;
+}
+
+.news-group h2 {
+  width: 100%;
+  font-size: 50px;
+  text-align: center;
+}
+
+.news-group .news-collection {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column wrap;
+          flex-flow: column wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.news-group .news-collection .news-cell {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 85%;
+  margin-bottom: 20px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 10px;
+  border: 2px solid black;
+  border-radius: 20px;
+}
+
+.news-group .news-collection .news-cell img {
+  height: 200px;
+  margin-right: 15px;
+}
+
+.news-group .news-collection .news-cell .news-text > p {
+  color: gray;
+}
+
+@media (max-width: 1300px) {
+  .background-image-group h1 {
+    font-size: 48px;
+    margin-top: 40px;
+    text-align: center;
+  }
+  .info-group {
+    width: 90%;
+  }
+  .info-group .info-group-collection div {
+    width: 100%;
+    height: auto;
+    padding: 15px 0;
+    margin-top: 15px;
+  }
+  .info-group .info-group-collection div p {
+    margin-top: 10px;
+  }
+  .info-group .info-group-collection div a {
+    margin-bottom: 10px;
+  }
+  .news-group {
+    width: 95%;
+  }
+  .news-group h2 {
+    font-size: 40px;
+  }
+  .news-group .news-collection .news-cell {
+    width: 95%;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    text-align: center;
+  }
+  .news-group .news-collection .news-cell img {
+    margin-right: 0;
+    margin-bottom: 15px;
+    width: 100%;
+    height: auto;
+    max-height: 200px;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  .news-group .news-collection .news-cell .news-text {
+    padding: 0 10px;
+  }
+}
+
+@media (max-width: 800px) {
+  .background-image-group h1 {
+    font-size: 36px;
+    margin-top: 30px;
+  }
+  .info-group h2 {
+    font-size: 38px;
+  }
+  .news-group h2 {
+    font-size: 32px;
+  }
+  .news-group .news-collection .news-cell .news-text > p {
+    font-size: 14px;
+  }
+  .news-group .news-collection .news-cell .news-text div p {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 600px) {
+  .background-image-group h1 {
+    font-size: 28px;
+    margin-top: 20px;
+  }
+  .info-group h2 {
+    font-size: 30px;
+  }
+  .info-group .info-group-collection div p {
+    font-size: 14px;
+  }
+  .info-group .info-group-collection div a {
+    font-size: 14px;
+  }
+  .news-group h2 {
+    font-size: 28px;
+  }
+}
+/*# sourceMappingURL=other_services.css.map */
