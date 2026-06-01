@@ -36,17 +36,9 @@ header{
     justify-content: center;
 }
 
-.logo-placeholder {
-    font-size: 28px;
-    font-weight: bold;
-    color: #0051BB;
-    background: #f2f1f1;
-    padding: 8px 25px;
-    border-radius: 40px;
-    border: 1px solid #b7b6b6;
-    letter-spacing: 1px;
-    white-space: nowrap;
-    margin-right: 20px;
+.logo{
+    width: 200px;
+    margin-top: 4px;
 }
 
 .head--image{

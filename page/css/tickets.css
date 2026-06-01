@@ -3,6 +3,11 @@
   color: white;
 }
 
+.mobile-nav .mobile-nav-link:nth-child(2) {
+  background-color: #007ABB;
+  color: white;
+}
+
 .tickets-filter {
   position: absolute;
   top: 90%;
@@ -321,6 +326,8 @@
             justify-content: center;
   }
   .tickets-catalog .ticket .code img {
+    -webkit-transform: rotate(90deg);
+            transform: rotate(90deg);
     width: 40px;
     height: auto;
   }
@@ -329,6 +336,156 @@
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between;
+  }
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: white;
+  border-radius: 20px;
+  padding: 20px;
+  width: 90%;
+  max-width: 400px;
+  position: relative;
+  -webkit-box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.modal-content .modal-close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  cursor: pointer;
+  font-size: 28px;
+  font-weight: bold;
+  color: #555;
+}
+
+.modal-content .modal-close:hover {
+  color: black;
+}
+
+.modal-content h3 {
+  margin-top: 0;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.modal-content .ticket-info {
+  background: #f2f2f2;
+  padding: 10px;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  font-size: 14px;
+}
+
+.modal-content input {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-size: 14px;
+}
+
+.modal-content button {
+  width: 100%;
+  padding: 12px;
+  background: #007abb;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 10px;
+  -webkit-transition: background 0.2s;
+  transition: background 0.2s;
+}
+
+.modal-content button:hover {
+  background: #005f99;
+}
+
+.notification {
+  position: fixed;
+  bottom: 30px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  background: #4caf50;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 30px;
+  z-index: 1100;
+  font-weight: bold;
+  -webkit-box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  -webkit-animation: fadein 0.3s, fadeout 0.3s 2.7s;
+          animation: fadein 0.3s, fadeout 0.3s 2.7s;
+  white-space: nowrap;
+}
+
+@-webkit-keyframes fadein {
+  from {
+    opacity: 0;
+    bottom: 0;
+  }
+  to {
+    opacity: 1;
+    bottom: 30px;
+  }
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+    bottom: 0;
+  }
+  to {
+    opacity: 1;
+    bottom: 30px;
+  }
+}
+
+@-webkit-keyframes fadeout {
+  from {
+    opacity: 1;
+    bottom: 30px;
+  }
+  to {
+    opacity: 0;
+    bottom: 0;
+  }
+}
+
+@keyframes fadeout {
+  from {
+    opacity: 1;
+    bottom: 30px;
+  }
+  to {
+    opacity: 0;
+    bottom: 0;
   }
 }
 /*# sourceMappingURL=tickets.css.map */

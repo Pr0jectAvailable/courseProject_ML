@@ -53,7 +53,7 @@ function updateFilteredTickets() {
 
 function renderCurrentPage() {
     if (filteredTickets.length === 0) {
-        catalogDiv.innerHTML = '<div style="text-align:center; padding:40px;">🚆 Билетов не найдено. Измените параметры фильтра.</div>';
+        catalogDiv.innerHTML = '<div style="text-align:center; padding:40px;">Билеты не найдены. Измените параметры фильтра.</div>';
         return;
     }
     const start = (currentPage - 1) * perPage;
@@ -61,7 +61,15 @@ function renderCurrentPage() {
     let html = '';
     for (let t of pageItems) {
         html += `
-            <div class="ticket">
+            <div class="ticket" 
+                 data-from="${escapeHtml(t.from)}" 
+                 data-to="${escapeHtml(t.to)}" 
+                 data-date="${escapeHtml(t.date)}" 
+                 data-time="${escapeHtml(t.time)}" 
+                 data-platform="${escapeHtml(t.platform)}" 
+                 data-company="${escapeHtml(t.company)}" 
+                 data-price="${escapeHtml(t.price)}" 
+                 data-rating="${t.rating}">
                 <div class="code"><img src="../images/barcode/barcode.png" alt=""></div>
                 <div class="ticket-information">
                     <div class="ticket-first-line">
@@ -114,6 +122,100 @@ function renderPagination() {
         });
     });
 }
+
+(function() {
+    let modalOverlay = null;
+    let notificationTimeout = null;
+
+    function createModal() {
+        const overlay = document.createElement('div');
+        overlay.className = 'modal-overlay';
+        overlay.innerHTML = `
+            <div class="modal-content">
+                <span class="modal-close">&times;</span>
+                <h3>Оформление заказа</h3>
+                <div class="ticket-info" id="modalTicketInfo"></div>
+                <input type="text" id="modalLastName" placeholder="Фамилия" autocomplete="off">
+                <input type="text" id="modalFirstName" placeholder="Имя" autocomplete="off">
+                <input type="tel" id="modalPhone" placeholder="Номер телефона" autocomplete="off">
+                <button id="modalConfirmBtn">Зарегистрировать билет</button>
+            </div>
+        `;
+        overlay.addEventListener('click', (e) => {
+            if (e.target === overlay) hideModal();
+        });
+        const closeSpan = overlay.querySelector('.modal-close');
+        if (closeSpan) closeSpan.addEventListener('click', hideModal);
+        const confirmBtn = overlay.querySelector('#modalConfirmBtn');
+        if (confirmBtn) {
+            confirmBtn.addEventListener('click', () => {
+                const lastName = document.getElementById('modalLastName').value.trim();
+                const firstName = document.getElementById('modalFirstName').value.trim();
+                const phone = document.getElementById('modalPhone').value.trim();
+                if (lastName === '' || firstName === '' || phone === '') {
+                    alert('Пожалуйста, заполните все поля');
+                    return;
+                }
+                hideModal();
+                showNotification('Билет зарегистрирован');
+                document.getElementById('modalLastName').value = '';
+                document.getElementById('modalFirstName').value = '';
+                document.getElementById('modalPhone').value = '';
+            });
+        }
+        return overlay;
+    }
+
+    function showModal(ticketData) {
+        if (!modalOverlay) {
+            modalOverlay = createModal();
+            document.body.appendChild(modalOverlay);
+        }
+        const ticketInfoDiv = modalOverlay.querySelector('#modalTicketInfo');
+        if (ticketInfoDiv && ticketData) {
+            ticketInfoDiv.innerHTML = `
+                <strong>${escapeHtml(ticketData.from)} → ${escapeHtml(ticketData.to)}</strong><br>
+                ${escapeHtml(ticketData.date)} | ${escapeHtml(ticketData.time)}<br>
+                ${escapeHtml(ticketData.platform)}<br>
+                💰 ${escapeHtml(ticketData.price)} BYN
+            `;
+        }
+        modalOverlay.style.display = 'flex';
+    }
+
+    function hideModal() {
+        if (modalOverlay) {
+            modalOverlay.style.display = 'none';
+        }
+    }
+
+    function showNotification(message) {
+        if (notificationTimeout) clearTimeout(notificationTimeout);
+        const existing = document.querySelector('.notification');
+        if (existing) existing.remove();
+        const notif = document.createElement('div');
+        notif.className = 'notification';
+        notif.textContent = message;
+        document.body.appendChild(notif);
+        notificationTimeout = setTimeout(() => {
+            notif.remove();
+        }, 3000);
+    }
+
+    if (catalogDiv) {
+        catalogDiv.addEventListener('click', (e) => {
+            const ticketDiv = e.target.closest('.ticket');
+            if (!ticketDiv) return;
+            const from = ticketDiv.dataset.from;
+            const to = ticketDiv.dataset.to;
+            const date = ticketDiv.dataset.date;
+            const time = ticketDiv.dataset.time;
+            const platform = ticketDiv.dataset.platform;
+            const price = ticketDiv.dataset.price;
+            showModal({ from, to, date, time, platform, price });
+        });
+    }
+})();
 
 document.addEventListener('DOMContentLoaded', () => {
     const filterFrom = document.getElementById('filterFrom');

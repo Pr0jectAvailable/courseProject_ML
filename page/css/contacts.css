@@ -3,6 +3,11 @@
   color: white;
 }
 
+.mobile-nav .mobile-nav-link:nth-child(5) {
+  background-color: #007ABB;
+  color: white;
+}
+
 .background-image-group h1 {
   font-size: 75px;
 }

@@ -3,6 +3,11 @@
   color: white;
 }
 
+.mobile-nav .mobile-nav-link:nth-child(3) {
+    background-color: #007ABB;
+    color: white;
+}
+
 .background-image-group h1 {
     color: #66B263;
     font-size: 60px;
@@ -223,12 +228,12 @@
         margin-top: 50px;
         .info-block {
             width: 100%;
-            flex-direction: row;
             flex-wrap: wrap;
             justify-content: space-between;
             gap: 20px;
+            align-content: center;
             .info-block-part {
-                width: calc(50% - 10px);
+                width: 70%;
                 margin-bottom: 0;
             }
         }
@@ -267,7 +272,7 @@
     .info {
         .info-block {
             .info-block-part {
-                width: 100%;
+                width: 90%;
                 .info-block-part-top {
                     h2 {
                         font-size: 20px;
